@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="honor, Stronger">
-    <meta name="description" content="大自然在为社会创造人类的同时赋予了他两种本质欲望，一种是取悦他的同类，另一种是不愿意得罪他的同类。
-大自然教导他对同类的幸福感到愉悦，对同类的不幸感到痛苦。
-多数人的成功……多数情况下要依靠他们的邻居和同伴的帮助与善意，而帮助和善意在没有被">
+    <meta name="keywords" content="买卖股票的最佳时机1~2, Stronger">
+    <meta name="description" content="一、题目描述给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>honor | Stronger</title>
+    <title>买卖股票的最佳时机1~2 | Stronger</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -282,12 +282,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">honor</h1>
+                    <h1 class="description center-align post-title">买卖股票的最佳时机1~2</h1>
                 </div>
             </div>
         </div>
@@ -311,8 +311,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/">
-                                <span class="chip bg-color">人生哲学</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                                <span class="chip bg-color">贪心</span>
                             </a>
                         
                     </div>
@@ -323,8 +327,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%96%87%E5%AD%A6/" class="post-category">
-                                文学
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -336,7 +340,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-29
+                    2023-08-02
                 </div>
                 
 
@@ -345,14 +349,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    124
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -375,9 +379,94 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>大自然在为社会创造人类的同时赋予了他两种本质欲望，一种是取悦他的同类，另一种是不愿意得罪他的同类。</p>
-<p>大自然教导他对同类的幸福感到愉悦，对同类的不幸感到痛苦。</p>
-<p>多数人的成功……多数情况下要依靠他们的邻居和同伴的帮助与善意，而帮助和善意在没有被人们接受的情况下是难以获得的。</p>
+                <h2 id><a href="#" class="headerlink" title></a></h2><p>一、题目描述<br>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</p>
+<p>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。</p>
+<p>返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</p>
+<p>假设给定一个数组[7,1,5,3,6,4]</p>
+<p>描绘的图表如下：</p>
+<img src="/images/pasted-5.png">
+
+
+<p>数组中每个值代表一个点，从图中我们很容易得出，最大利润就是图中的两个峰值差，也就是说，我们只要维护数组中的最小值，再找到最大值就能够得出最大利润了。</p>
+<p>我们发现，股票要先买入才能卖出，所以对于数组prices,如果prices[i]&lt;prices[i-1],我们就可以买入，否则就卖出，这样才能实现盈利而不会亏损。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> prices<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">int</span> n <span class="token operator">=</span> prices<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> dp <span class="token operator">=</span>prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//可以买入股票的最小值</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>prices<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token comment">//价格低于前一天，可以买入</span>
+              dp <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+              <span class="token comment">//价格上涨，可以卖出</span>
+              max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> dp<span class="token punctuation">,</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> max<span class="token punctuation">;</span> 
+
+
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><p>二、题目描述：</p>
+<p>给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。</p>
+<p>在每一天，你可以决定是否购买和&#x2F;或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。</p>
+<p>返回 你能获得的 最大 利润 。</p>
+<p>示例 1：</p>
+<pre class="line-numbers language-none"><code class="language-none">输入：prices &#x3D; [7,1,5,3,6,4]
+输出：7
+解释：在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 3 天（股票价格 &#x3D; 5）的时候卖出, 这笔交易所能获得利润 &#x3D; 5 - 1 &#x3D; 4 。
+     随后，在第 4 天（股票价格 &#x3D; 3）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出, 这笔交易所能获得利润 &#x3D; 6 - 3 &#x3D; 3 。
+     总利润为 4 + 3 &#x3D; 7 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>我们发现题二在题一的基础上做了一些改变，<br>股票可以多次买入卖出。</p>
+<p>当然，为了获取最大利润，我们还是要低价买入高价卖出，</p>
+<p>我们可以在题一的基础上做些变动，因为可以多次买入，我们可以在卖出后再买入当前股票，同时维护之后买入股票的最小值，以求获取最大利润。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> prices<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> prices<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>sum_max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> dp <span class="token operator">=</span>prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//可以买入股票的最小值</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>prices<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//价格低于前一天，可以买入</span>
+                dp <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//价格上涨，可以卖出</span>
+                max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> dp<span class="token punctuation">,</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//卖出后，可以考虑买入新的股</span>
+                dp <span class="token operator">=</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                sum_max<span class="token operator">+=</span>max<span class="token punctuation">;</span>
+                max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//更新max值，找下一个可以获得的最大利润</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> sum_max<span class="token punctuation">;</span> 
+
+
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>再上面代码中我们发现如果prices[i]&gt;prices[i-1]时，都会更新卖出的最大利润<br>max &#x3D; Math.max(prices[i] - dp,max);也就是说，如果股票价格比前一天有所上涨，我们可以持续卖出再买入。否则就可以只买入不卖出。这样我们可以得到另一种解法贪心。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> prices<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">int</span> n <span class="token operator">=</span> prices<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> sum_max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 用于记录多次交易的最大利润之和</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// 如果当前价格大于前一天的价格，表示可以在前一天卖出并在当天买入，将利润累加到sum_max中</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> prices<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              sum_max <span class="token operator">+=</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> prices<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token punctuation">&#125;</span>
+          <span class="token comment">// 如果当前价格小于等于前一天的价格，则不进行买卖操作</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">return</span> sum_max<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>动态规划其实就是一种状态转移过程，把状态转移方程写出来了，具体实现也就不难了。</p>
 
                 
             </div>
@@ -404,7 +493,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://surpag.github.io/2023/07/29/honor/">http://surpag.github.io/2023/07/29/honor/</a>
+                    <a href="http://surpag.github.io/2023/08/02/%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA1-2/">http://surpag.github.io/2023/08/02/%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA1-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -442,8 +531,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/">
-                                    <span class="chip bg-color">人生哲学</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                                    <span class="chip bg-color">贪心</span>
                                 </a>
                             
                         </div>
@@ -522,17 +615,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                <a href="/2023/08/02/%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA1-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="最大正方形">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="买卖股票的最佳时机1~2">
                         
-                        <span class="card-title">最大正方形</span>
+                        <span class="card-title">买卖股票的最佳时机1~2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -542,9 +636,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-29
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                        <span class="chip bg-color">贪心</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07/31/%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="最短回文串">
+                        
+                        <span class="card-title">最短回文串</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -560,55 +708,14 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E5%9E%8B%E5%8C%B9%E9%85%8D/">
+                        <span class="chip bg-color">字符型匹配</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/07/24/1/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="山不转，路转；路不转，人转。">
-                        
-                        <span class="card-title">山不转，路转；路不转，人转。</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%96%87%E5%AD%A6/" class="post-category">
-                                    文学
-                                </a>
-                            
-                            <a href="/categories/%E6%96%87%E5%AD%A6/%E6%83%B3%E6%B3%95/" class="post-category">
-                                    想法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/KMP/">
+                        <span class="chip bg-color">KMP</span>
+                    </a>
+                    
                 </div>
                 
             </div>
